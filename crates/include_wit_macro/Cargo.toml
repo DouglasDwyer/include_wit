@@ -2,6 +2,12 @@
 name = "include_wit_macro"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/DouglasDwyer/include_wit"
+readme = "README.md"
+description = """
+Macro implementation for embedding WIT data into application binaries.
+"""
 
 [lib]
 proc-macro = true

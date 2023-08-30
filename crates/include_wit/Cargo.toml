@@ -2,6 +2,12 @@
 name = "include_wit"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/DouglasDwyer/include_wit"
+readme = "README.md"
+description = """
+Macro for embedding WIT data into application binaries.
+"""
 
 [dependencies]
 include_wit_macro = { workspace = true }
