@@ -4,9 +4,9 @@
 [![Docs.rs](https://docs.rs/include_wit/badge.svg)](https://docs.rs/include_wit)
 [![Unsafe Forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](https://github.com/rust-secure-code/safety-dance/)
 
-`include_wit` allows for embedding [`wit_parser::Resolve`] instances into an application binary.
+`include_wit` allows for embedding `wit_parser::Resolve` instances into an application binary.
 It exposes a single macro which parses a WIT file or directory, and generates a WASM binary to include in
-source code. This WASM binary is then parsed at runtime upon first access.
+the source code. This WASM binary is then parsed at runtime upon first access.
 
 ## Usage
 
