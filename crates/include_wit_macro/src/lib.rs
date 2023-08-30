@@ -16,7 +16,7 @@ use std::path::*;
 use wit_component::*;
 use wit_parser::*;
 
-/// Parses the provided WIT file or directory and produces a [`Resolve`] which may be queried at runtime.
+/// Parses the provided WIT file or directory and produces a `Resolve` which may be queried at runtime.
 #[proc_macro]
 pub fn include_wit(x: TokenStream) -> TokenStream {
     let input = x.into_iter().map(Into::into).collect::<Vec<TokenTree>>();
