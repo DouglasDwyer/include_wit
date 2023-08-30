@@ -1,0 +1,23 @@
+[workspace]
+members = [
+  "crates/include_wit",
+  "crates/include_wit_macro",
+]
+exclude = [ "testtest" ]
+
+[workspace.dependencies]
+
+include_wit = { path = "crates/include_wit", version = "0.1" }
+include_wit_macro = { path = "crates/include_wit_macro", version = "0.1" }
+litrs = "0.4.0"
+once_cell = { version = "1.18.0", default-features = false, features = [ "alloc", "race" ] }
+proc-macro2 = "1.0.66"
+quote = "1.0.33"
+wit-component = "0.14.0"
+wit-parser = "0.11.0"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/DouglasDwyer/include_wit"
+license = "MIT OR Apache-2"
