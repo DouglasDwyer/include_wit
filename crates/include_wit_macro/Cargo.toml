@@ -1,0 +1,18 @@
+[package]
+name = "include_wit_macro"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+litrs = { workspace = true }
+proc-macro2 = { workspace = true }
+quote = { workspace = true }
+wit-component = { workspace = true }
+wit-parser = { workspace = true }
+
+[features]
+relative_path = []
+track_path = []

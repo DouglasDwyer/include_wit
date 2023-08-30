@@ -1,0 +1,5 @@
+package test:guest
+
+world root {
+    import test:guest/console
+}

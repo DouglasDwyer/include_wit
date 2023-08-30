@@ -1,0 +1,5 @@
+package test:guest
+
+interface console {
+    log: func(message: string)
+}

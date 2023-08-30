@@ -1,0 +1,17 @@
+[package]
+name = "include_wit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+include_wit_macro = { workspace = true }
+once_cell = { workspace = true }
+wit-component = { workspace = true }
+wit-parser = { workspace = true }
+
+[features]
+relative_path = [ "include_wit_macro/relative_path" ]
+track_path = [ "include_wit_macro/track_path" ]
+
+[dev-dependencies]
+include_wit = { path = ".", features = [ "relative_path", "track_path" ] }
