@@ -23,9 +23,6 @@ pub fn include_wit(x: TokenStream) -> TokenStream {
     assert!(input.len() == 1, "Wrong number of arguments.");
     let x = StringLit::try_from(&input[0]).expect("Could not parse argument as path string.").into_value();
 
-    #[cfg(feature = "track_path")]
-    tracked_path::path(&x);
-
     #[allow(unused)]
     let mut parent_dir_path = None;
     #[cfg(feature = "relative_path")]
@@ -34,8 +31,13 @@ pub fn include_wit(x: TokenStream) -> TokenStream {
         path.pop();
         parent_dir_path = Some(path);
     }
+
+    let resolved_path = resolve_path(&x, parent_dir_path).expect("Could not resolve path.");
     
-    let (resolve, package) = parse_wit(&resolve_path(&x, parent_dir_path).expect("Could not resolve path."));
+    #[cfg(feature = "track_path")]
+    tracked_path::path(resolved_path.display().to_string());
+
+    let (resolve, package) = parse_wit(&resolved_path);
     let encoded_wasm = encode(&resolve, package).expect("Could not encode WIT binary.");
     let byte_literal = proc_macro2::Literal::byte_string(&encoded_wasm);
     

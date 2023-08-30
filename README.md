@@ -13,14 +13,12 @@ the source code. This WASM binary is then parsed at runtime upon first access.
 The following is a simple example of how to use `include_wit`. The full example may be found in [the examples folder](/crates/include_wit/examples/).
 
 ```rust
-fn main() {
-    // Embed the WIT folder into this application
-    let resolve = include_wit::include_wit!("wit");
-    
-    // Print all interfaces in the resolve
-    for x in &resolve.interfaces {
-        println!("{x:?}");
-    }
+// Embed the WIT folder into this application
+let resolve = include_wit::include_wit!("wit");
+
+// Print all interfaces in the resolve
+for x in &resolve.interfaces {
+    println!("{x:?}");
 }
 ```
 
