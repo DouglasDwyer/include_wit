@@ -3,21 +3,21 @@ members = [
   "crates/include_wit",
   "crates/include_wit_macro",
 ]
-exclude = [ "testtest" ]
+resolver = "2"
 
 [workspace.dependencies]
 
 include_wit = { path = "crates/include_wit", version = "0.1" }
 include_wit_macro = { path = "crates/include_wit_macro", version = "0.1" }
-litrs = "0.4.0"
-once_cell = { version = "1.18.0", default-features = false, features = [ "alloc", "race" ] }
-proc-macro2 = "1.0.66"
-quote = "1.0.33"
-wit-component = "0.14.0"
-wit-parser = "0.11.0"
+litrs = { version = "0.4.1", default-features = false }
+once_cell = { version = "1.19.0", default-features = false, features = [ "alloc", "race" ] }
+proc-macro2 = { version = "1.0.78", default-features = false }
+quote = { version = "1.0.35", default-features = false }
+wit-component = { version = ">=0.20.2", default-features = false }
+wit-parser = { version = ">=0.13.2", default-features = false }
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.3"
 edition = "2021"
 repository = "https://github.com/DouglasDwyer/include_wit"
 license = "MIT OR Apache-2"

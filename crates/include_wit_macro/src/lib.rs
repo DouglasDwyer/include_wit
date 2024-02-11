@@ -39,7 +39,7 @@ pub fn include_wit(x: TokenStream) -> TokenStream {
     tracked_path::path(resolved_path.display().to_string());
 
     let (resolve, package) = parse_wit(&resolved_path);
-    let encoded_wasm = encode(&resolve, package).expect("Could not encode WIT binary.");
+    let encoded_wasm = encode(Some(true), &resolve, package).expect("Could not encode WIT binary.");
     let byte_literal = proc_macro2::Literal::byte_string(&encoded_wasm);
 
     quote! {
